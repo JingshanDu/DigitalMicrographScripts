@@ -98,12 +98,12 @@ exit(0)
 }
 
 
-// Copy the x and y calibration from the live image to spectrum image
+// Copy the x and y calibration
 											
 imagecopycalibrationfrom(targetimage,sourceimage)
 
 
-// Copy the spectrum calibration to the z axis of the spectrum image
+// Copy the spectrum calibration
 
 number waveorigin, wavescale
 string waveunits
