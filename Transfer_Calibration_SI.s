@@ -25,8 +25,6 @@
 
 image sourceimage, targetimage
 
-number xscale, yscale
-
 number width, height
 
 number zorigin, zscale
@@ -42,8 +40,6 @@ string units, zunits
  
 
 gettwoimageswithprompt(" Source (0),Target (1)","Select Source and Target Images", sourceimage, targetimage)
-
-getscale(sourceimage, xscale, yscale)
 
 getsize (sourceimage, width, height)
 
@@ -103,10 +99,9 @@ exit(0)
 imagecopycalibrationfrom(targetimage,sourceimage)
 
 
-// Copy the spectrum calibration
+// Copy the spectral calibration
 
-number waveorigin, wavescale
-string waveunits
+
 imagegetdimensioncalibration(sourceimage, 2, zorigin, zscale, zunits, 0)
 imagesetdimensioncalibration(targetimage, 2, zorigin, zscale, zunits, 0) 
 
