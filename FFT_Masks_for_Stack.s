@@ -11,14 +11,14 @@
 number xsize, ysize, zsize
 image stackfft:=getfrontimage()
 try
-	{
-		get3dsize(stackfft, xsize, ysize, zsize)		
-	}
+{
+	get3dsize(stackfft, xsize, ysize, zsize)		
+}
 catch
-	{
-		showalert("The front-most image is not a stack.",2)
-		exit(0)
-	}
+{
+	showalert("The front-most image is not a stack.",2)
+	exit(0)
+}
 imagedisplay imgdisp=stackfft.imagegetimagedisplay(0)
 
 // Ask for filter options
@@ -50,10 +50,10 @@ compleximage mask=createmaskfromannotations(imgdisp, filtersize,0, hasmask)
 // If no masks are applied to the selected FFT then hasmask=0
 
 if(hasmask==0)
-	{
-		showalert("There are no masks applied to this FFT!",0)
-		exit(0)
-	}
+{
+	showalert("There are no masks applied to this FFT!",0)
+	exit(0)
+}
 
 setname(mask, "Mask")
 
