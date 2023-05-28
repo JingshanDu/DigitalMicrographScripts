@@ -7,24 +7,24 @@
 number nodocs
 nodocs=countdocumentwindowsoftype(5)
 if(nodocs==0)
-	{
-		showalert("There are no images displayed!",0)
-		exit(0)
-	}
+{
+	showalert("There are no images displayed!",0)
+	exit(0)
+}
 
 // Get the foremost image and some data from it
 number xsize, ysize, zsize
 image stackimg:=getfrontimage()
 
 try
-	{
-		get3dsize(stackimg, xsize, ysize, zsize)		
-	}
+{
+	get3dsize(stackimg, xsize, ysize, zsize)		
+}
 catch
-	{
-		showalert("The front-most image is not a stack.",2)
-		exit(0)
-	}
+{
+	showalert("The front-most image is not a stack.",2)
+	exit(0)
+}
 
 // Create the FFT complex stack
 image stackfft := compleximage("FFT Stack", 8, xsize, ysize, zsize)
